@@ -1,0 +1,125 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #67e2a6 0%, #34b3f2 100%);
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  background-color: #212121; /* Darker background color for the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 97%;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  animation: slideInLeft 1s ease-in-out;
+  margin-left: 10%;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.welcome-note {
+  flex: 1;
+  text-align: right;
+  animation: slideInRight 1s ease-in-out;
+  color: white;
+  margin-right: 10%;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  height: 60%;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  height: 95%;
+  background-color: grey;
+  width: 45%;
+}
+
+.card img {
+  height: 140px;
+  width: 140px;
+}
+
+.card:hover {
+  background-color: #b0b0b0;
+}
+
+.link {
+  text-decoration: none;
+  color: #333; /* Update font color */
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: bounce 0.5s ease-in-out infinite alternate;
+}
