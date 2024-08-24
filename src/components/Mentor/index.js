@@ -9,6 +9,7 @@ const Mentor = () => {
   const [schedules, setSchedules] = useState([]);
   const [showSchedules, setShowSchedules] = useState(false);
 
+  //When the mentor provides id , it fetches his/her scheduled sessions if any
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
