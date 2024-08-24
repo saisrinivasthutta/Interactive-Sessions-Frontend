@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Table from "rc-table";
 import "./index.css";
 
+//Dummy Expertises
 const expertises = [
   { id: 1, name: "Finance" },
   { id: 2, name: "Marketing" },
@@ -36,6 +37,7 @@ const Student = () => {
   const [mentorId, setMentorId] = useState();
   const [availableMentors, setAvailableMentorsList] = useState([]);
 
+  //When the student submits ID ,It retrieves scheduled sessions if any
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -60,10 +62,13 @@ const Student = () => {
     }
   };
 
+  //When the student clicks on Book new it is used toggle the form
   const onShowNewSessionForm = () => {
     setShowNewSessionForm(!showNewSessionForm);
   };
 
+  //When the student submits New session form with valid inputs then it creates new Session and makes a post API
+  //After successfully inserting new sessions . it again fetches student sessions
   const handleNewSessionSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -121,6 +126,7 @@ const Student = () => {
     }
   };
 
+  //When the student provides valid expertise, duration, scheduleTime it fetches the available mentors
   const fetchAvailableMentors = async () => {
     try {
       const response = await fetch(
@@ -134,6 +140,7 @@ const Student = () => {
     }
   };
 
+  //column details for table
   const columns = [
     {
       title: "Session ID",
